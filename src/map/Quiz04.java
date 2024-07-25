@@ -9,20 +9,16 @@ public class Quiz04 {
 
 		HashMap<Integer, Student> map = new HashMap<>();
 
-		Student studnet1 = new Student(1001, "둘리", 90, 80, 70);
-		Student studnet2 = new Student(1002, "도우너", 55, 65, 75);
-		Student studnet3 = new Student(1003, "또치", 80, 50, 50);
+		map.put(1001, new Student(1001, "둘리", 90, 80, 70));
+		map.put(1002, new Student(1002, "도우너", 55, 65, 75));
+		map.put(1003, new Student(1003, "또치", 80, 50, 50));
 
-		map.put(studnet1.num, studnet1);
-		map.put(studnet2.num, studnet2);
-		map.put(studnet3.num, studnet3);
+		Collection<Student> values = map.values();
 
-		Collection<Student> students = map.values();
-
-		for (Student stu : students) {
+		for (Student stu : values) {
 			int sum = stu.kor + stu.math + stu.eng;
-			double avr = sum / 3.0;
-			System.out.println(stu.name + "의 총점: " + sum + ", 평균: " + avr);
+			double avg = sum / 3.0;
+			System.out.println(stu.name + "의 총점: " + sum + ", 평균: " + avg);
 		}
 
 		System.out.println();
@@ -31,7 +27,7 @@ public class Quiz04 {
 		int MathSum = 0;
 		int engSum = 0;
 
-		for (Student stu : students) {
+		for (Student stu : values) {
 			korSum += stu.kor;
 			MathSum += stu.math;
 			engSum += stu.eng;
